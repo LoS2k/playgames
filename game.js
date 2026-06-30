@@ -432,16 +432,18 @@ function gameLoop(now) {
 
 canvas.addEventListener('click', (e) => {
   const rect = canvas.getBoundingClientRect();
-  const sx = (e.clientX - rect.left) * (canvas.width / rect.width);
-  const sy = (e.clientY - rect.top) * (canvas.height / rect.height);
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const sx = (e.clientX - rect.left) * scaleX;
+  const sy = (e.clientY - rect.top) * scaleY;
 
   let closest = null;
-  let closestDist = 28;
+  let closestDist = 40;
 
   tables.forEach(t => {
     const p = gridToScreen(t.gx, t.gy);
     const tx = p.x;
-    const ty = p.y + TILE_H / 2 - 40;
+    const ty = p.y + TILE_H / 2 - 15;
     const dist = Math.hypot(sx - tx, sy - ty);
     if (dist < closestDist) { closestDist = dist; closest = t; }
   });
@@ -474,8 +476,10 @@ document.getElementById('celebrationCloseBtn').addEventListener('click', () => {
 
 loadGame();
 initTables();
-resizeCanvas();
-renderUI();
-requestAnimationFrame(gameLoop);
+requestAnimationFrame(() => {
+  resizeCanvas();
+  renderUI();
+  requestAnimationFrame(gameLoop);
+});
 
 setTimeout(spawnGuestIfPossible, 800);
