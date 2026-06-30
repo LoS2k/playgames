@@ -16,10 +16,12 @@ let originY = 0;
 
 function resizeCanvas() {
   const wrap = canvas.parentElement;
-  const w = Math.min(wrap.clientWidth, 880);
+  const w = Math.min(wrap.clientWidth || 880, 880);
   const h = Math.round(w * 0.62);
   canvas.width = w;
   canvas.height = h;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
   originX = w / 2;
   originY = 90;
 }
