@@ -15,7 +15,7 @@
     <div class="brand-icon">🍳</div>
     <div class="brand-text">
       <div class="brand-name">Смаколик</div>
-      <div class="brand-sub" id="restaurantName">Ресторан мрії</div>
+      <div class="brand-sub">Ресторан мрії</div>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
   </div>
 
   <div class="tabs">
-    <button class="tab-btn active" data-tab="kitchen">🍽️ Зала</button>
+    <button class="tab-btn active" data-tab="room">🍽️ Зала</button>
     <button class="tab-btn" data-tab="menu">📖 Меню</button>
     <button class="tab-btn" data-tab="shop">🛋️ Декор</button>
     <button class="tab-btn" data-tab="staff">👩‍🍳 Персонал</button>
@@ -43,21 +43,21 @@
 
 <div class="page">
 
-  <!-- ===== KITCHEN / DINING ROOM TAB ===== -->
-  <section class="tab-panel active" id="tab-kitchen">
-    <div class="room-floor" id="roomFloor"></div>
+  <section class="tab-panel active" id="tab-room">
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas"></canvas>
+      <div class="canvas-hint" id="canvasHint">Натисни на гостя, щоб прийняти замовлення</div>
+    </div>
   </section>
 
-  <!-- ===== MENU TAB ===== -->
   <section class="tab-panel" id="tab-menu">
     <div class="panel-head">
       <h2>Меню закладу</h2>
-      <p>Відкривай нові страви для своїх гостей — кожна додає різноманіття замовлень.</p>
+      <p>Відкривай нові страви — кожна додає різноманіття замовлень.</p>
     </div>
     <div class="card-grid" id="menuGrid"></div>
   </section>
 
-  <!-- ===== SHOP / DECOR TAB ===== -->
   <section class="tab-panel" id="tab-shop">
     <div class="panel-head">
       <h2>Декор та меблі</h2>
@@ -66,7 +66,6 @@
     <div class="card-grid" id="shopGrid"></div>
   </section>
 
-  <!-- ===== STAFF TAB ===== -->
   <section class="tab-panel" id="tab-staff">
     <div class="panel-head">
       <h2>Персонал</h2>
@@ -77,10 +76,8 @@
 
 </div>
 
-<!-- ORDER POPUP -->
 <div class="toast-stack" id="toastStack"></div>
 
-<!-- LEVEL UP CELEBRATION -->
 <div class="celebration-overlay" id="celebrationOverlay">
   <div class="celebration-card">
     <div class="celebration-emoji">🎉</div>
@@ -90,6 +87,7 @@
   </div>
 </div>
 
+<script src="iso-engine.js"></script>
 <script src="game.js"></script>
 </body>
 </html>
