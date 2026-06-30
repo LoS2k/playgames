@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Смаколик — ресторан твоєї мрії</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-icon">🍳</div>
+    <div class="brand-text">
+      <div class="brand-name">Смаколик</div>
+      <div class="brand-sub" id="restaurantName">Ресторан мрії</div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat stat-money">
+      <span class="stat-icon">💰</span>
+      <span class="stat-value" id="moneyVal">50</span>
+    </div>
+    <div class="stat stat-level">
+      <span class="stat-icon">⭐</span>
+      <span class="stat-value">Рівень <span id="levelVal">1</span></span>
+    </div>
+    <div class="stat stat-xp">
+      <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="kitchen">🍽️ Зала</button>
+    <button class="tab-btn" data-tab="menu">📖 Меню</button>
+    <button class="tab-btn" data-tab="shop">🛋️ Декор</button>
+    <button class="tab-btn" data-tab="staff">👩‍🍳 Персонал</button>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ===== KITCHEN / DINING ROOM TAB ===== -->
+  <section class="tab-panel active" id="tab-kitchen">
+    <div class="room-floor" id="roomFloor"></div>
+  </section>
+
+  <!-- ===== MENU TAB ===== -->
+  <section class="tab-panel" id="tab-menu">
+    <div class="panel-head">
+      <h2>Меню закладу</h2>
+      <p>Відкривай нові страви для своїх гостей — кожна додає різноманіття замовлень.</p>
+    </div>
+    <div class="card-grid" id="menuGrid"></div>
+  </section>
+
+  <!-- ===== SHOP / DECOR TAB ===== -->
+  <section class="tab-panel" id="tab-shop">
+    <div class="panel-head">
+      <h2>Декор та меблі</h2>
+      <p>Прикрашай заклад — гості залишають більші чайові у затишній атмосфері.</p>
+    </div>
+    <div class="card-grid" id="shopGrid"></div>
+  </section>
+
+  <!-- ===== STAFF TAB ===== -->
+  <section class="tab-panel" id="tab-staff">
+    <div class="panel-head">
+      <h2>Персонал</h2>
+      <p>Наймай кухарів та офіціантів — вони пришвидшують готування і обслуговування.</p>
+    </div>
+    <div class="card-grid" id="staffGrid"></div>
+  </section>
+
+</div>
+
+<!-- ORDER POPUP -->
+<div class="toast-stack" id="toastStack"></div>
+
+<!-- LEVEL UP CELEBRATION -->
+<div class="celebration-overlay" id="celebrationOverlay">
+  <div class="celebration-card">
+    <div class="celebration-emoji">🎉</div>
+    <div class="celebration-title">Новий рівень!</div>
+    <div class="celebration-sub" id="celebrationText"></div>
+    <button class="btn-primary" id="celebrationCloseBtn">Чудово!</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
